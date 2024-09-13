@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <!--..............................side navbar..............................-->
+        <div class="side-navbar">
+            <i class="fa-solid fa-bars"></i>
+
+
+            <div class="design">
+                <a href="">meterial</a>
+                <a href="">design</a>
+                <a href="">process</a>
+            </div>
+
+        </div>
+
+        <!--...............................top navbar....................................-->
+
+        <div class="top-navbar">
+            <div class="top">
+                <a href="#">Shop</a>
+                <a href="#">Features</a>
+                <a href="#">Recipes</a>
+                <a href="#">Hotline</a>
+            </div>
+
+            <div class="icons">
+                <a href=""><i class="fa-solid fa-cart-plus"></i></a>
+                <img src="slide3.jpg" alt="">
+                <div class="theme-switch">
+                    <input type="checkbox" id="theme-switch" class="theme-switch-checkbox">
+                    <label for="theme-switch" class="theme-switch-label">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!--.................................food................................................-->
+
+
+        <div class="food">
+            <div class="foodbar">
+                <span>foodbar</span>
+                <img src="img2.png" alt="" id="foodbar-img">
+            </div>
+
+            <div class="order">
+                <h1>healthy salad</h1>
+                <p>salad is nutritionally complete food that contain all 27 essential vitamins,
+                    essential fatty acides, carbs, fibre and phytonurients.
+                </p>
+                <span class="anker">$28</span>
+                <span class="sp">Discount 50%</span>
+                <a href="" class="btn">Order now</a>
+
+            </div>
+        </div>
+
+
+        <!--.............................footer......................-->
+
+        <div class="footer">
+            <div class="images">
+                <img src="img2.png" alt="Asparagus Wild Salad" class="iteam-img">
+                <span>$23</span>
+                <p>Asparagus Wild</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <a href="#"><i class="fa-solid fa-plus"></i>></a>
+            </div>
+
+            <div class="images">
+                <img src="img1.png" alt="Lime Asparagus Salad" class="iteam-img">
+                <span>$23</span>
+                <p>Lime Asparagus</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <a href="#"><i class="fa-solid fa-plus"></i>></a>
+            </div>
+
+            <div class="images">
+                <img src="img4.png" alt="Green Beans Salad" class="iteam-img">
+                <span>$23</span>
+                <p>Green Beans</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <a href="#"><i class="fa-solid fa-plus"></i>></a>
+            </div>
+
+            <div class="images">
+                <img src="img3.png" alt="Zucchini Salad" class="iteam-img">
+                <span>$23</span>
+                <p>Zucchini Salad</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <a href="#"><i class="fa-solid fa-plus"></i>></a>
+            </div>
+            
+        </div>
+
+        <!--........................................social...............................-->
+
+        <div class="social">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-google"></i>
+            <i class="fa-brands fa-square-facebook"></i>
+        </div>
+
+
+
+
+    </header>
+    <script>
+        // ............................Add items in cart .........................//
+
+        //Select all the "Add to cart " buttons
+        const addToCartButtons = document.querySelectorAll('.images a');
+
+        // Select the cart icon in the top navigation bar 
+
+        const cartIcon = document.querySelector('.top-navbar .icons a i');
+
+        let cartCount = 0; // Initialize a variable to keep track of the cart count
+
+        addToCartButtons.forEach(button => {
+            button.addEventlistener('click', () => {
+               cartCount++; // Increase the cart count
+               cartIcon.textContent = cartCount; //update the cart icon text with the new content
+            });
+
+        });
+
+        //.............................................change-items..............................................
+
+        // Select all the images in the footer
+
+        const footerImages = document.querySelectorAll('.footer .images img');
+
+        // Select the image inthe foodbar
+
+        const foodbarImage = document.quarySelector('.foodbar img');
+
+        // Add a click event listener to each footer image
+
+        footerImages.forEach(imge => {
+            image.addEventListener('click', () => {
+              // update the source of the foodbar image
+              foodbarImage.src = image.src;
+            });
+
+        });
+
+        //...........................................remove-animation................................
+
+       const itemImages = document.querySelectorAll('.item-img');
+
+       itemImages.forEach(img => {
+            img.addEventListener('click', () => {
+             // Remove the 'animated' class from all images
+             itemImages.forEach(img => img.classList.remove('animated'));
+
+             // Add the 'animated' class to the clicked image
+             img.classList.add('animated');
+            });
+
+        });
+
+      //..............................................toggle-light-dart-mode...........................
+
+        const themeSwitch = document.getElementById('theme-switch');
+        const body = document.body;
+
+        themeSwitch.addEventListener('change', function () {
+          body.classList.toggle('dark-mode');
+        });
+    </script>
+    
+</body>
+
+</html>
